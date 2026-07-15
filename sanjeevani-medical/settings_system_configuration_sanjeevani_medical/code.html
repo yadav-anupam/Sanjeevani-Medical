@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Settings | Sanjeevani Medical</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Geist:wght@400;500;600;700;800;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind Configuration -->
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "surface-bright": "#f8f9ff",
+                    "on-background": "#0b1c30",
+                    "on-secondary": "#ffffff",
+                    "surface-container-highest": "#d3e4fe",
+                    "primary": "#006591",
+                    "primary-fixed": "#c9e6ff",
+                    "secondary-fixed-dim": "#4edea3",
+                    "on-tertiary": "#ffffff",
+                    "tertiary": "#855300",
+                    "tertiary-container": "#d88a00",
+                    "surface": "#f8f9ff",
+                    "on-tertiary-fixed-variant": "#653e00",
+                    "inverse-on-surface": "#eaf1ff",
+                    "on-secondary-fixed": "#002113",
+                    "inverse-primary": "#89ceff",
+                    "on-tertiary-container": "#4a2c00",
+                    "on-surface": "#0b1c30",
+                    "on-error": "#ffffff",
+                    "error": "#ba1a1a",
+                    "outline-variant": "#bec8d2",
+                    "primary-fixed-dim": "#89ceff",
+                    "on-primary-fixed": "#001e2f",
+                    "surface-container-high": "#dce9ff",
+                    "surface-variant": "#d3e4fe",
+                    "primary-container": "#0ea5e9",
+                    "surface-container-low": "#eff4ff",
+                    "on-primary-fixed-variant": "#004c6e",
+                    "tertiary-fixed-dim": "#ffb95f",
+                    "on-tertiary-fixed": "#2a1700",
+                    "background": "#f8f9ff",
+                    "on-primary-container": "#003751",
+                    "secondary-container": "#6cf8bb",
+                    "on-primary": "#ffffff",
+                    "on-error-container": "#93000a",
+                    "secondary": "#006c49",
+                    "on-secondary-fixed-variant": "#005236",
+                    "surface-container-lowest": "#ffffff",
+                    "inverse-surface": "#213145",
+                    "tertiary-fixed": "#ffddb8",
+                    "outline": "#6e7881",
+                    "surface-tint": "#006591",
+                    "surface-container": "#e5eeff",
+                    "surface-dim": "#cbdbf5",
+                    "secondary-fixed": "#6ffbbe",
+                    "on-surface-variant": "#3e4850",
+                    "error-container": "#ffdad6",
+                    "on-secondary-container": "#00714d"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "sm": "8px",
+                    "margin": "32px",
+                    "base": "4px",
+                    "3xl": "64px",
+                    "2xl": "48px",
+                    "lg": "24px",
+                    "xs": "4px",
+                    "gutter": "24px",
+                    "max_width": "1440px",
+                    "md": "16px",
+                    "xl": "32px"
+            },
+            "fontFamily": {
+                    "display": ["Geist"],
+                    "title-lg": ["Inter"],
+                    "mono-sm": ["Geist"],
+                    "label-md": ["Geist"],
+                    "headline-md": ["Geist"],
+                    "headline-lg": ["Geist"],
+                    "body-lg": ["Inter"],
+                    "body-md": ["Inter"]
+            }
+          }
+        }
+      }
+    </script>
+<style>
+        body { font-family: 'Inter', sans-serif; }
+        .font-headline { font-family: 'Geist', sans-serif; }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .active-tab-indicator {
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+    </style>
+</head>
+<body class="bg-surface-bright text-on-surface">
+<!-- TopNavBar -->
+<header class="flex justify-between items-center px-margin h-16 w-full sticky top-0 z-40 bg-surface border-b border-outline-variant">
+<div class="flex items-center gap-md">
+<span class="lg:hidden material-symbols-outlined cursor-pointer text-on-surface-variant">menu</span>
+<h1 class="font-headline-md text-headline-md font-bold text-primary">Sanjeevani Medical</h1>
+</div>
+<div class="flex items-center gap-lg">
+<div class="hidden md:flex items-center bg-surface-container-low px-md py-xs rounded-full border border-outline-variant">
+<span class="material-symbols-outlined text-outline">search</span>
+<input class="bg-transparent border-none focus:ring-0 text-body-md w-64" placeholder="Search settings..." type="text"/>
+<span class="text-label-md text-outline">⌘K</span>
+</div>
+<div class="flex items-center gap-md">
+<span class="material-symbols-outlined text-on-surface-variant cursor-pointer hover:bg-surface-container-low p-2 rounded-full transition-colors">notifications</span>
+<span class="material-symbols-outlined text-on-surface-variant cursor-pointer hover:bg-surface-container-low p-2 rounded-full transition-colors">help</span>
+<div class="w-8 h-8 rounded-full bg-primary-container flex items-center justify-center overflow-hidden border border-outline-variant">
+<img class="w-full h-full object-cover" data-alt="A professional portrait of a pharmacist wearing a clean white lab coat, standing in a brightly lit modern pharmacy with organized shelves of medicine in the background. High-key lighting, corporate photography style, clean and trustworthy medical environment." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCUtXxwLFbD54OrMNUnDDda4q12W_7h5wCsO-pwDfPpuUfOHv_juIv7JLF1vXhjtSyL2WcHqUE9jRrIAzJeqoJRnMiOkt_a_O9TgFqxxuY-2RymEWMyVn_cNlanZf_JbiZ4mXDCYmUsQjn5T25JDZug0jLr7eVxquJcwmuSwCNpnZlMDjuY-nS5R3wyYh-JMAUZthB0dQlDHn5uOrSg_YrmfhE_SsH7P__O39hHaPk3Zxsq6KzjOPRi3rwh0kDNCS1jQ2r_cmJzgXQ"/>
+</div>
+</div>
+</div>
+</header>
+<div class="flex min-h-screen">
+<!-- SideNavBar -->
+<aside class="hidden lg:flex flex-col w-72 h-[calc(100vh-64px)] fixed left-0 top-16 z-30 py-lg px-md bg-white border-r border-outline-variant">
+<div class="mb-xl px-sm">
+<h2 class="font-title-lg text-title-lg text-primary font-bold">Settings</h2>
+<p class="text-label-md text-on-surface-variant">System Configuration</p>
+</div>
+<nav class="flex-1 space-y-base overflow-y-auto">
+<a class="tab-link flex items-center gap-md px-md py-sm rounded-lg transition-all bg-primary-container/10 text-primary border-l-4 border-primary" href="#" id="nav-general" onclick="switchTab('general')">
+<span class="material-symbols-outlined">store</span>
+<span class="font-label-md text-label-md">Dashboard</span>
+</a>
+<a class="tab-link flex items-center gap-md px-md py-sm rounded-lg transition-all text-on-surface-variant hover:bg-surface-container-low" href="#" id="nav-inventory" onclick="switchTab('inventory')">
+<span class="material-symbols-outlined">inventory_2</span>
+<span class="font-label-md text-label-md">Inventory</span>
+</a>
+<a class="tab-link flex items-center gap-md px-md py-sm rounded-lg transition-all text-on-surface-variant hover:bg-surface-container-low" href="#" id="nav-pos" onclick="switchTab('pos')">
+<span class="material-symbols-outlined">point_of_sale</span>
+<span class="font-label-md text-label-md">POS</span>
+</a>
+<a class="tab-link flex items-center gap-md px-md py-sm rounded-lg transition-all text-on-surface-variant hover:bg-surface-container-low" href="#" id="nav-suppliers" onclick="switchTab('suppliers')">
+<span class="material-symbols-outlined">local_shipping</span>
+<span class="font-label-md text-label-md">Suppliers</span>
+</a>
+<a class="tab-link flex items-center gap-md px-md py-sm rounded-lg transition-all text-on-surface-variant hover:bg-surface-container-low" href="#" id="nav-reports" onclick="switchTab('reports')">
+<span class="material-symbols-outlined">analytics</span>
+<span class="font-label-md text-label-md">Reports</span>
+</a>
+<a class="tab-link flex items-center gap-md px-md py-sm rounded-lg transition-all bg-primary-container/10 text-primary border-l-4 border-primary" href="#" id="nav-settings" onclick="switchTab('settings')">
+<span class="material-symbols-outlined">settings</span>
+<span class="font-label-md text-label-md">Settings</span>
+</a>
+</nav>
+<div class="mt-auto pt-lg border-t border-outline-variant space-y-base">
+<a class="flex items-center gap-md px-md py-sm text-on-surface-variant hover:bg-surface-container-low rounded-lg transition-all" href="#">
+<span class="material-symbols-outlined">contact_support</span>
+<span class="font-label-md text-label-md">Support</span>
+</a>
+<a class="flex items-center gap-md px-md py-sm text-error hover:bg-error-container/20 rounded-lg transition-all" href="#">
+<span class="material-symbols-outlined">logout</span>
+<span class="font-label-md text-label-md">Logout</span>
+</a>
+</div>
+</aside>
+<!-- Main Content Area -->
+<main class="flex-1 lg:ml-72 p-lg lg:p-xl bg-surface-bright min-h-screen">
+<div class="max-w-6xl mx-auto space-y-xl">
+<!-- Page Header -->
+<div class="flex flex-col md:flex-row md:items-center justify-between gap-md">
+<div>
+<h2 class="font-headline-lg text-headline-lg text-on-background">System Configuration</h2>
+<p class="text-body-md text-on-surface-variant">Manage your pharmacy's core settings, user permissions, and security protocols.</p>
+</div>
+<button class="bg-primary text-on-primary font-label-md text-label-md px-lg py-sm rounded-lg flex items-center gap-sm hover:opacity-90 active:scale-95 transition-all shadow-sm">
+<span class="material-symbols-outlined text-[20px]">save</span>
+                        Save All Changes
+                    </button>
+</div>
+<!-- Bento Grid Layout for Settings -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-lg">
+<!-- Section 1: General Store Settings (Span 7) -->
+<section class="lg:col-span-7 bg-white p-lg rounded-xl border border-outline-variant shadow-sm">
+<div class="flex items-center gap-md mb-lg">
+<div class="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center text-primary">
+<span class="material-symbols-outlined">store</span>
+</div>
+<h3 class="font-title-lg text-title-lg font-bold">General Store Settings</h3>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-lg">
+<div class="space-y-xs">
+<label class="text-label-md text-on-surface-variant font-medium">Store Name</label>
+<input class="w-full px-md py-sm border border-outline-variant rounded-lg focus:ring-2 focus:ring-primary-container focus:border-primary outline-none transition-all" type="text" value="Sanjeevani Medical &amp; General Store"/>
+</div>
+<div class="space-y-xs">
+<label class="text-label-md text-on-surface-variant font-medium">GSTIN Number</label>
+<input class="w-full px-md py-sm border border-outline-variant rounded-lg focus:ring-2 focus:ring-primary-container focus:border-primary outline-none transition-all" type="text" value="27AAACS1234A1Z5"/>
+</div>
+<div class="space-y-xs md:col-span-2">
+<label class="text-label-md text-on-surface-variant font-medium">Store Address</label>
+<textarea class="w-full px-md py-sm border border-outline-variant rounded-lg focus:ring-2 focus:ring-primary-container focus:border-primary outline-none transition-all" rows="2">Shop 04, LifeCare Plaza, Near MG Road, Mumbai - 400001</textarea>
+</div>
+<div class="space-y-xs">
+<label class="text-label-md text-on-surface-variant font-medium">Contact Number</label>
+<div class="flex">
+<span class="inline-flex items-center px-md rounded-l-lg border border-r-0 border-outline-variant bg-surface-container text-on-surface-variant text-body-md">+91</span>
+<input class="w-full px-md py-sm border border-outline-variant rounded-r-lg focus:ring-2 focus:ring-primary-container focus:border-primary outline-none transition-all" type="tel" value="9876543210"/>
+</div>
+</div>
+<div class="space-y-xs">
+<label class="text-label-md text-on-surface-variant font-medium">Email Address</label>
+<input class="w-full px-md py-sm border border-outline-variant rounded-lg focus:ring-2 focus:ring-primary-container focus:border-primary outline-none transition-all" type="email" value="contact@sanjeevani.com"/>
+</div>
+</div>
+</section>
+<!-- Section 2: Security & Backup (Span 5) -->
+<section class="lg:col-span-5 bg-white p-lg rounded-xl border border-outline-variant shadow-sm flex flex-col">
+<div class="flex items-center gap-md mb-lg">
+<div class="w-10 h-10 rounded-lg bg-secondary/10 flex items-center justify-center text-secondary">
+<span class="material-symbols-outlined">security</span>
+</div>
+<h3 class="font-title-lg text-title-lg font-bold">Security &amp; Backup</h3>
+</div>
+<div class="space-y-lg flex-1">
+<div class="p-md rounded-lg bg-surface-container-low border border-outline-variant">
+<div class="flex items-center justify-between mb-sm">
+<div class="flex items-center gap-sm">
+<span class="material-symbols-outlined text-primary">cloud_upload</span>
+<span class="font-label-md font-bold">Supabase Auto-Backup</span>
+</div>
+<label class="relative inline-flex items-center cursor-pointer">
+<input checked="" class="sr-only peer" type="checkbox"/>
+<div class="w-11 h-6 bg-outline-variant peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full rtl:peer-checked:after:-translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:start-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-primary"></div>
+</label>
+</div>
+<p class="text-body-md text-on-surface-variant mb-md">Last backup: 2 hours ago. Automatic sync is active.</p>
+<button class="w-full py-sm bg-white border border-primary text-primary font-label-md rounded-lg hover:bg-primary/5 transition-all">Trigger Manual Backup</button>
+</div>
+<div class="flex items-center justify-between py-sm border-b border-outline-variant">
+<div>
+<p class="font-label-md font-bold">Two-Factor Authentication</p>
+<p class="text-body-md text-on-surface-variant">Secure your account with SMS or App codes</p>
+</div>
+<label class="relative inline-flex items-center cursor-pointer">
+<input class="sr-only peer" type="checkbox"/>
+<div class="w-11 h-6 bg-outline-variant peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full rtl:peer-checked:after:-translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:start-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-primary"></div>
+</label>
+</div>
+<div class="flex items-center justify-between py-sm">
+<div>
+<p class="font-label-md font-bold">Session Management</p>
+<p class="text-body-md text-on-surface-variant">Log out from all other active devices</p>
+</div>
+<button class="text-error font-label-md hover:underline">Revoke All</button>
+</div>
+</div>
+</section>
+<!-- Section 3: User Management & Roles (Span 8) -->
+<section class="lg:col-span-8 bg-white rounded-xl border border-outline-variant shadow-sm overflow-hidden">
+<div class="p-lg flex items-center justify-between border-b border-outline-variant">
+<div class="flex items-center gap-md">
+<div class="w-10 h-10 rounded-lg bg-tertiary/10 flex items-center justify-center text-tertiary">
+<span class="material-symbols-outlined">group</span>
+</div>
+<h3 class="font-title-lg text-title-lg font-bold">User Management &amp; Roles</h3>
+</div>
+<button class="bg-primary text-on-primary px-md py-sm rounded-lg font-label-md flex items-center gap-xs hover:shadow-md transition-all">
+<span class="material-symbols-outlined text-[20px]">person_add</span>
+                                Add New User
+                            </button>
+</div>
+<div class="overflow-x-auto">
+<table class="w-full text-left border-collapse">
+<thead class="bg-surface-container text-outline uppercase font-mono-sm text-label-md">
+<tr>
+<th class="px-lg py-md font-semibold">User Details</th>
+<th class="px-lg py-md font-semibold">Role</th>
+<th class="px-lg py-md font-semibold">Permissions</th>
+<th class="px-lg py-md font-semibold">Actions</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-outline-variant">
+<tr class="hover:bg-surface-container-low transition-colors">
+<td class="px-lg py-md">
+<div class="flex items-center gap-md">
+<div class="w-9 h-9 rounded-full bg-primary-fixed flex items-center justify-center text-primary font-bold">RS</div>
+<div>
+<p class="font-label-md font-bold">Rahul Sharma</p>
+<p class="text-body-md text-on-surface-variant">rahul@sanjeevani.com</p>
+</div>
+</div>
+</td>
+<td class="px-lg py-md">
+<span class="px-sm py-1 bg-primary/10 text-primary text-label-md font-bold rounded uppercase">Admin</span>
+</td>
+<td class="px-lg py-md text-body-md text-on-surface-variant">
+                                            Full System Access, Financials
+                                        </td>
+<td class="px-lg py-md">
+<div class="flex gap-md text-outline">
+<span class="material-symbols-outlined cursor-pointer hover:text-primary transition-colors">edit</span>
+<span class="material-symbols-outlined cursor-pointer hover:text-error transition-colors">delete</span>
+</div>
+</td>
+</tr>
+<tr class="hover:bg-surface-container-low transition-colors">
+<td class="px-lg py-md">
+<div class="flex items-center gap-md">
+<div class="w-9 h-9 rounded-full bg-secondary-container flex items-center justify-center text-secondary font-bold">AP</div>
+<div>
+<p class="font-label-md font-bold">Anjali Patel</p>
+<p class="text-body-md text-on-surface-variant">anjali@sanjeevani.com</p>
+</div>
+</div>
+</td>
+<td class="px-lg py-md">
+<span class="px-sm py-1 bg-secondary/10 text-secondary text-label-md font-bold rounded uppercase">Pharmacist Admin</span>
+</td>
+<td class="px-lg py-md text-body-md text-on-surface-variant">
+                                            Inventory, Billing, Suppliers
+                                        </td>
+<td class="px-lg py-md">
+<div class="flex gap-md text-outline">
+<span class="material-symbols-outlined cursor-pointer hover:text-primary transition-colors">edit</span>
+<span class="material-symbols-outlined cursor-pointer hover:text-error transition-colors">delete</span>
+</div>
+</td>
+</tr>
+<tr class="hover:bg-surface-container-low transition-colors">
+<td class="px-lg py-md">
+<div class="flex items-center gap-md">
+<div class="w-9 h-9 rounded-full bg-surface-container-highest flex items-center justify-center text-on-surface-variant font-bold">VK</div>
+<div>
+<p class="font-label-md font-bold">Vikram Kumar</p>
+<p class="text-body-md text-on-surface-variant">vikram@sanjeevani.com</p>
+</div>
+</div>
+</td>
+<td class="px-lg py-md">
+<span class="px-sm py-1 bg-outline-variant/30 text-on-surface-variant text-label-md font-bold rounded uppercase">Operator</span>
+</td>
+<td class="px-lg py-md text-body-md text-on-surface-variant">
+                                            Billing, View Inventory
+                                        </td>
+<td class="px-lg py-md">
+<div class="flex gap-md text-outline">
+<span class="material-symbols-outlined cursor-pointer hover:text-primary transition-colors">edit</span>
+<span class="material-symbols-outlined cursor-pointer hover:text-error transition-colors">delete</span>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<!-- Section 4: Notification Preferences (Span 4) -->
+<section class="lg:col-span-4 bg-white p-lg rounded-xl border border-outline-variant shadow-sm">
+<div class="flex items-center gap-md mb-lg">
+<div class="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center text-primary">
+<span class="material-symbols-outlined">notifications_active</span>
+</div>
+<h3 class="font-title-lg text-title-lg font-bold">Notifications</h3>
+</div>
+<div class="space-y-md">
+<div class="flex items-start justify-between p-md rounded-lg hover:bg-surface-container-low transition-all">
+<div>
+<p class="font-label-md font-bold">Low Stock Alerts</p>
+<p class="text-body-md text-on-surface-variant">Notify when items fall below threshold</p>
+</div>
+<label class="relative inline-flex items-center cursor-pointer mt-1">
+<input checked="" class="sr-only peer" type="checkbox"/>
+<div class="w-11 h-6 bg-outline-variant peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full rtl:peer-checked:after:-translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:start-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-primary"></div>
+</label>
+</div>
+<div class="flex items-start justify-between p-md rounded-lg hover:bg-surface-container-low transition-all">
+<div>
+<p class="font-label-md font-bold">Expiry Warnings</p>
+<p class="text-body-md text-on-surface-variant">Alert for items expiring within 30 days</p>
+</div>
+<label class="relative inline-flex items-center cursor-pointer mt-1">
+<input checked="" class="sr-only peer" type="checkbox"/>
+<div class="w-11 h-6 bg-outline-variant peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full rtl:peer-checked:after:-translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:start-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-primary"></div>
+</label>
+</div>
+<div class="flex items-start justify-between p-md rounded-lg hover:bg-surface-container-low transition-all">
+<div>
+<p class="font-label-md font-bold">Daily Sales Reports</p>
+<p class="text-body-md text-on-surface-variant">Email summary of daily transactions</p>
+</div>
+<label class="relative inline-flex items-center cursor-pointer mt-1">
+<input class="sr-only peer" type="checkbox"/>
+<div class="w-11 h-6 bg-outline-variant peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full rtl:peer-checked:after:-translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:start-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-primary"></div>
+</label>
+</div>
+<div class="flex items-start justify-between p-md rounded-lg hover:bg-surface-container-low transition-all">
+<div>
+<p class="font-label-md font-bold">New Supplier Quote</p>
+<p class="text-body-md text-on-surface-variant">Push notifications for new price lists</p>
+</div>
+<label class="relative inline-flex items-center cursor-pointer mt-1">
+<input class="sr-only peer" type="checkbox"/>
+<div class="w-11 h-6 bg-outline-variant peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full rtl:peer-checked:after:-translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:start-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-primary"></div>
+</label>
+</div>
+</div>
+</section>
+</div>
+<!-- Footer CTA -->
+<div class="flex items-center justify-end gap-md pt-lg border-t border-outline-variant">
+<button class="px-lg py-sm text-on-surface-variant font-label-md hover:bg-surface-container rounded-lg transition-all">Discard Changes</button>
+<button class="px-xl py-sm bg-primary text-on-primary font-bold rounded-lg shadow-lg shadow-primary/20 hover:scale-[1.02] active:scale-95 transition-all">Apply Configuration</button>
+</div>
+</div>
+</main>
+</div>
+<!-- Micro-interaction Script -->
+<script>
+        function switchTab(tabId) {
+            // This is a mock interaction for navigation links
+            const tabs = document.querySelectorAll('.tab-link');
+            tabs.forEach(tab => {
+                tab.classList.remove('bg-primary-container/10', 'text-primary', 'border-l-4', 'border-primary');
+                tab.classList.add('text-on-surface-variant', 'hover:bg-surface-container-low');
+            });
+            
+            const activeNav = document.getElementById('nav-' + tabId);
+            if (activeNav) {
+                activeNav.classList.remove('text-on-surface-variant', 'hover:bg-surface-container-low');
+                activeNav.classList.add('bg-primary-container/10', 'text-primary', 'border-l-4', 'border-primary');
+            }
+        }
+
+        // Search highlight micro-interaction
+        const searchInput = document.querySelector('input[type="text"]');
+        searchInput.addEventListener('focus', () => {
+            searchInput.parentElement.classList.add('ring-2', 'ring-primary-container', 'border-primary');
+        });
+        searchInput.addEventListener('blur', () => {
+            searchInput.parentElement.classList.remove('ring-2', 'ring-primary-container', 'border-primary');
+        });
+    </script>
+</body></html>

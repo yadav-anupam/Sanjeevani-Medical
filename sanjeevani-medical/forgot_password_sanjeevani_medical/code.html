@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Forgot Password | Sanjeevani Medical</title>
+<!-- Google Fonts: Geist and Inter -->
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Geist:wght@400;500;600;700;900&amp;display=swap" rel="stylesheet"/>
+<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "on-secondary": "#ffffff",
+                    "tertiary": "#855300",
+                    "on-primary": "#ffffff",
+                    "surface-container-lowest": "#ffffff",
+                    "tertiary-fixed-dim": "#ffb95f",
+                    "tertiary-container": "#d88a00",
+                    "background": "#f8f9ff",
+                    "on-tertiary-fixed-variant": "#653e00",
+                    "on-background": "#0b1c30",
+                    "primary-container": "#0ea5e9",
+                    "outline": "#6e7881",
+                    "on-primary-container": "#003751",
+                    "on-secondary-fixed-variant": "#005236",
+                    "surface-container-low": "#eff4ff",
+                    "surface": "#f8f9ff",
+                    "tertiary-fixed": "#ffddb8",
+                    "outline-variant": "#bec8d2",
+                    "error": "#ba1a1a",
+                    "on-surface": "#0b1c30",
+                    "on-secondary-fixed": "#002113",
+                    "secondary-container": "#6cf8bb",
+                    "error-container": "#ffdad6",
+                    "surface-container": "#e5eeff",
+                    "inverse-primary": "#89ceff",
+                    "surface-container-highest": "#d3e4fe",
+                    "primary-fixed": "#c9e6ff",
+                    "on-tertiary": "#ffffff",
+                    "surface-bright": "#f8f9ff",
+                    "on-error-container": "#93000a",
+                    "on-tertiary-fixed": "#2a1700",
+                    "surface-dim": "#cbdbf5",
+                    "on-primary-fixed-variant": "#004c6e",
+                    "surface-variant": "#d3e4fe",
+                    "on-secondary-container": "#00714d",
+                    "primary": "#006591",
+                    "surface-container-high": "#dce9ff",
+                    "inverse-on-surface": "#eaf1ff",
+                    "secondary-fixed": "#6ffbbe",
+                    "on-primary-fixed": "#001e2f",
+                    "surface-tint": "#006591",
+                    "inverse-surface": "#213145",
+                    "primary-fixed-dim": "#89ceff",
+                    "on-surface-variant": "#3e4850",
+                    "on-error": "#ffffff",
+                    "secondary-fixed-dim": "#4edea3",
+                    "on-tertiary-container": "#4a2c00",
+                    "secondary": "#006c49"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "sm": "8px",
+                    "xl": "32px",
+                    "gutter": "24px",
+                    "margin": "32px",
+                    "xs": "4px",
+                    "base": "4px",
+                    "2xl": "48px",
+                    "md": "16px",
+                    "max_width": "1440px",
+                    "lg": "24px",
+                    "3xl": "64px"
+            },
+            "fontFamily": {
+                    "headline-lg-mobile": ["Geist"],
+                    "headline-lg": ["Geist"],
+                    "body-lg": ["Inter"],
+                    "mono-sm": ["Geist"],
+                    "label-md": ["Geist"],
+                    "display": ["Geist"],
+                    "headline-md": ["Geist"],
+                    "body-md": ["Inter"],
+                    "title-lg": ["Inter"]
+            },
+            "fontSize": {
+                    "headline-lg-mobile": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                    "headline-lg": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+                    "body-lg": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                    "mono-sm": ["13px", {"lineHeight": "18px", "fontWeight": "400"}],
+                    "label-md": ["12px", {"lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "500"}],
+                    "display": ["48px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                    "headline-md": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                    "body-md": ["14px", {"lineHeight": "20px", "fontWeight": "400"}],
+                    "title-lg": ["18px", {"lineHeight": "28px", "fontWeight": "600"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        body {
+            background-color: #f8f9ff;
+            color: #0b1c30;
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .glass-panel {
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+        .animate-fade-up {
+            animation: fadeUp 0.6s ease-out forwards;
+        }
+        @keyframes fadeUp {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+</head>
+<body class="flex min-h-screen items-center justify-center p-md lg:p-xl">
+<!-- Background Decoration -->
+<div class="fixed inset-0 overflow-hidden pointer-events-none z-0">
+<div class="absolute -top-1/4 -right-1/4 w-[600px] h-[600px] bg-primary/5 rounded-full blur-3xl"></div>
+<div class="absolute -bottom-1/4 -left-1/4 w-[500px] h-[500px] bg-secondary/5 rounded-full blur-3xl"></div>
+</div>
+<!-- Main Card Container -->
+<main class="w-full max-w-lg z-10 animate-fade-up">
+<div class="bg-surface-container-lowest shadow-xl rounded-xl p-xl md:p-2xl border border-outline-variant">
+<!-- Logo & Identity -->
+<header class="flex flex-col items-center mb-xl">
+<div class="w-16 h-16 bg-primary-container/10 flex items-center justify-center rounded-xl mb-md">
+<span class="material-symbols-outlined text-primary text-3xl" style="font-variation-settings: 'FILL' 1;">medical_services</span>
+</div>
+<h1 class="font-headline-md text-headline-md text-primary font-bold">Sanjeevani Medical</h1>
+<p class="font-body-md text-body-md text-on-surface-variant mt-xs">Pharmacy Management System</p>
+</header>
+<!-- Reset Password Instruction -->
+<div class="text-center mb-xl">
+<h2 class="font-title-lg text-title-lg text-on-background mb-sm">Forgot your password?</h2>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-[320px] mx-auto">
+                    Enter the email address associated with your account and we'll send you a link to reset your password.
+                </p>
+</div>
+<!-- Form -->
+<form class="space-y-lg" id="reset-form">
+<div>
+<label class="block font-label-md text-label-md text-on-surface-variant mb-xs ml-1" for="email">WORK EMAIL ADDRESS</label>
+<div class="relative group">
+<div class="absolute inset-y-0 left-0 pl-md flex items-center pointer-events-none">
+<span class="material-symbols-outlined text-outline text-lg group-focus-within:text-primary transition-colors">mail</span>
+</div>
+<input class="w-full pl-xl pr-md py-md bg-white border border-outline-variant rounded-lg focus:ring-4 focus:ring-primary/10 focus:border-primary transition-all font-body-md outline-none" id="email" placeholder="pharmacist@sanjeevani.com" required="" type="email"/>
+</div>
+</div>
+<!-- Primary Action -->
+<button class="w-full bg-primary hover:bg-primary/90 text-white font-title-lg py-md rounded-lg shadow-md hover:shadow-lg transition-all active:scale-95 flex items-center justify-center gap-sm group" id="submit-btn" type="submit">
+<span>Send Reset Link</span>
+<span class="material-symbols-outlined text-lg group-hover:translate-x-1 transition-transform">arrow_forward</span>
+</button>
+</form>
+<!-- Back to Login -->
+<div class="mt-xl text-center">
+<a class="inline-flex items-center gap-xs font-label-md text-label-md text-primary hover:text-primary-fixed-dim transition-colors font-bold uppercase tracking-wider group" href="#">
+<span class="material-symbols-outlined text-sm">arrow_back</span>
+<span>Back to Login</span>
+</a>
+</div>
+<!-- Success State (Hidden by default) -->
+<div class="hidden flex flex-col items-center text-center py-md animate-fade-up" id="success-state">
+<div class="w-16 h-16 bg-secondary-container/20 flex items-center justify-center rounded-full mb-md">
+<span class="material-symbols-outlined text-secondary text-3xl">check_circle</span>
+</div>
+<h3 class="font-title-lg text-title-lg text-on-background mb-sm">Check your email</h3>
+<p class="font-body-md text-body-md text-on-surface-variant mb-lg">
+                    We have sent a password recovery link to your inbox. Please check your spam folder if you don't see it.
+                </p>
+<button class="font-label-md text-label-md text-primary hover:underline font-bold" onclick="window.location.reload()">
+                    Didn't receive email? Try again
+                </button>
+</div>
+</div>
+<!-- Footer Footer -->
+<footer class="mt-xl text-center">
+<p class="font-label-md text-label-md text-outline">
+                © 2024 Sanjeevani Medical Systems. All rights reserved.
+            </p>
+<div class="flex justify-center gap-md mt-sm">
+<a class="font-label-md text-label-md text-primary hover:underline" href="#">Privacy Policy</a>
+<span class="text-outline-variant">•</span>
+<a class="font-label-md text-label-md text-primary hover:underline" href="#">Security Protocols</a>
+</div>
+</footer>
+</main>
+<!-- Side Graphic (Desktop only) -->
+<aside class="hidden xl:block ml-2xl w-full max-w-md animate-fade-up" style="animation-delay: 0.2s;">
+<div class="relative rounded-2xl overflow-hidden shadow-2xl h-[600px] group border border-outline-variant">
+<div class="absolute inset-0 bg-cover bg-center transition-transform duration-[10s] group-hover:scale-110" data-alt="A clean, clinical, and high-tech pharmaceutical research laboratory environment with soft turquoise and white lighting. Professional glass equipment and digital monitors showing medical data are visible in the background, creating a mood of reliability, precision, and healthcare innovation. The aesthetic is bright, light-mode, and corporate modern." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuC4YG2vdN7IVuk38W11t2Bl96_3IBq_EJb14Xu1p4Qw51QYeILZMTpYN5obRg_v9yqmWUK2LfTzueDAo9liftofGZE9NcyRQT5HfjzZs7Etnva0pmXl_4foxiMxYPJGINC-XxDHxgNnNCK1-tQ_I7Koc8cmA58Q4CJMqyKrWsQXo9g6GOaF_ccbZKBQv-FaycJuJJLMd2VcVcaxlgwrw0eMH21DMx6ItjHs19nQOgYwQc_nQ5LXDoO91RJ2UDb76FPMWLsfByRitPU')"></div>
+<div class="absolute inset-0 bg-gradient-to-t from-primary/80 via-transparent to-transparent"></div>
+<div class="absolute bottom-0 left-0 p-xl text-white">
+<p class="font-headline-md text-headline-md font-bold mb-sm">Securing your healthcare data.</p>
+<p class="font-body-md text-body-lg opacity-90">Sanjeevani ensures high-level encryption for all prescription and inventory workflows.</p>
+</div>
+</div>
+</aside>
+<script>
+        document.getElementById('reset-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const email = document.getElementById('email').value;
+            const submitBtn = document.getElementById('submit-btn');
+            const resetForm = document.getElementById('reset-form');
+            const successState = document.getElementById('success-state');
+            const instruction = document.querySelector('div.text-center.mb-xl');
+
+            // Visual feedback
+            submitBtn.disabled = true;
+            submitBtn.innerHTML = `
+                <span class="animate-spin material-symbols-outlined text-lg">progress_activity</span>
+                <span>Sending...</span>
+            `;
+
+            // Simulate API call
+            setTimeout(() => {
+                resetForm.classList.add('hidden');
+                instruction.classList.add('hidden');
+                successState.classList.remove('hidden');
+            }, 1500);
+        });
+    </script>
+</body></html>

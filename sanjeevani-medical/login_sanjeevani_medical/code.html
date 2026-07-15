@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Sanjeevani Medical - Login</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Geist:wght@400;500;600;700;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "on-secondary": "#ffffff",
+                    "tertiary": "#855300",
+                    "on-primary": "#ffffff",
+                    "surface-container-lowest": "#ffffff",
+                    "tertiary-fixed-dim": "#ffb95f",
+                    "tertiary-container": "#d88a00",
+                    "background": "#f8f9ff",
+                    "on-tertiary-fixed-variant": "#653e00",
+                    "on-background": "#0b1c30",
+                    "primary-container": "#0ea5e9",
+                    "outline": "#6e7881",
+                    "on-primary-container": "#003751",
+                    "on-secondary-fixed-variant": "#005236",
+                    "surface-container-low": "#eff4ff",
+                    "surface": "#f8f9ff",
+                    "tertiary-fixed": "#ffddb8",
+                    "outline-variant": "#bec8d2",
+                    "error": "#ba1a1a",
+                    "on-surface": "#0b1c30",
+                    "on-secondary-fixed": "#002113",
+                    "secondary-container": "#6cf8bb",
+                    "error-container": "#ffdad6",
+                    "surface-container": "#e5eeff",
+                    "inverse-primary": "#89ceff",
+                    "surface-container-highest": "#d3e4fe",
+                    "primary-fixed": "#c9e6ff",
+                    "on-tertiary": "#ffffff",
+                    "surface-bright": "#f8f9ff",
+                    "on-error-container": "#93000a",
+                    "on-tertiary-fixed": "#2a1700",
+                    "surface-dim": "#cbdbf5",
+                    "on-primary-fixed-variant": "#004c6e",
+                    "surface-variant": "#d3e4fe",
+                    "on-secondary-container": "#00714d",
+                    "primary": "#006591",
+                    "surface-container-high": "#dce9ff",
+                    "inverse-on-surface": "#eaf1ff",
+                    "secondary-fixed": "#6ffbbe",
+                    "on-primary-fixed": "#001e2f",
+                    "surface-tint": "#006591",
+                    "inverse-surface": "#213145",
+                    "primary-fixed-dim": "#89ceff",
+                    "on-surface-variant": "#3e4850",
+                    "on-error": "#ffffff",
+                    "secondary-fixed-dim": "#4edea3",
+                    "on-tertiary-container": "#4a2c00",
+                    "secondary": "#006c49"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "sm": "8px",
+                    "xl": "32px",
+                    "gutter": "24px",
+                    "margin": "32px",
+                    "xs": "4px",
+                    "base": "4px",
+                    "2xl": "48px",
+                    "md": "16px",
+                    "max_width": "1440px",
+                    "lg": "24px",
+                    "3xl": "64px"
+            },
+            "fontFamily": {
+                    "headline-lg-mobile": ["Geist"],
+                    "headline-lg": ["Geist"],
+                    "body-lg": ["Inter"],
+                    "mono-sm": ["Geist"],
+                    "label-md": ["Geist"],
+                    "display": ["Geist"],
+                    "headline-md": ["Geist"],
+                    "body-md": ["Inter"],
+                    "title-lg": ["Inter"]
+            },
+            "fontSize": {
+                    "headline-lg-mobile": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                    "headline-lg": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+                    "body-lg": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                    "mono-sm": ["13px", {"lineHeight": "18px", "fontWeight": "400"}],
+                    "label-md": ["12px", {"lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "500"}],
+                    "display": ["48px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                    "headline-md": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                    "body-md": ["14px", {"lineHeight": "20px", "fontWeight": "400"}],
+                    "title-lg": ["18px", {"lineHeight": "28px", "fontWeight": "600"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f8f9ff;
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .glass-panel {
+            background: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+    </style>
+</head>
+<body class="flex items-center justify-center min-h-screen relative overflow-hidden">
+<!-- Background Layer with Professional Healthcare Imagery -->
+<div class="fixed inset-0 z-0 h-full w-full">
+<div class="h-full w-full bg-cover bg-center" data-alt="A professional medical setting showing a modern, high-tech pharmacy interior with clean white shelves, soft teal lighting, and blurred pharmaceutical equipment. The atmosphere is serene and trustworthy, featuring a bright, light-mode aesthetic with expansive depth. The colors are predominantly soft blues and surgical whites, conveying precision and medical expertise." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAqPqH8kZq3dHFqycE_5-27yU6M-byCMXO4PuG8POopEStj1toYqsPWS44l2AJT4U70hWeeS_YsWa6TCFlfKwjtUCgIgukdbOcBgzhAKMcg5srsh70b4bP3vIvNch_5pOvnEptEjeiaAFq2FteLYfu321qLdGaFdA1wrsU3BL4pMVMtiPt8EEottoa_lOfAM89uvNoMorboIVRdfx1CGXxl38TFpC8UlSvh_a_cN_AEyeimywYhtFfOM9dqMwUHJoz-3q2dgPWYun8')">
+</div>
+<!-- Brand Gradient Overlay -->
+<div class="absolute inset-0 bg-gradient-to-tr from-primary/30 to-background/80"></div>
+</div>
+<!-- Main Content Canvas -->
+<main class="relative z-10 w-full max-w-md px-margin animate-in fade-in duration-700">
+<!-- Branding Header -->
+<div class="text-center mb-xl">
+<div class="inline-flex items-center justify-center w-16 h-16 rounded-xl bg-primary mb-md shadow-lg shadow-primary/20">
+<span class="material-symbols-outlined text-white text-[32px]">medical_services</span>
+</div>
+<h1 class="font-headline-lg text-headline-lg text-on-background tracking-tight">
+                Sanjeevani Medical
+            </h1>
+<p class="font-body-md text-body-md text-on-surface-variant mt-xs">
+                Pharmacy Management Portal
+            </p>
+</div>
+<!-- Central Login Card -->
+<div class="glass-panel p-xl rounded-xl shadow-2xl">
+<form class="space-y-lg" id="loginForm" onsubmit="return false">
+<!-- Email Field -->
+<div class="space-y-xs">
+<label class="font-label-md text-label-md text-on-surface-variant flex items-center gap-xs" for="email">
+<span class="material-symbols-outlined text-[16px]">mail</span>
+                        Email Address
+                    </label>
+<div class="relative group">
+<input class="w-full h-12 px-md rounded-lg border border-outline-variant bg-white focus:border-primary focus:ring-4 focus:ring-primary/10 outline-none transition-all font-body-md text-body-md placeholder:text-outline-variant" id="email" placeholder="pharmacist@sanjeevani.com" required="" type="email"/>
+</div>
+</div>
+<!-- Password Field -->
+<div class="space-y-xs">
+<div class="flex justify-between items-center">
+<label class="font-label-md text-label-md text-on-surface-variant flex items-center gap-xs" for="password">
+<span class="material-symbols-outlined text-[16px]">lock</span>
+                            Password
+                        </label>
+<a class="font-label-md text-label-md text-primary hover:text-primary-fixed-dim transition-colors" href="#">
+                            Forgot Password?
+                        </a>
+</div>
+<div class="relative group">
+<input class="w-full h-12 px-md rounded-lg border border-outline-variant bg-white focus:border-primary focus:ring-4 focus:ring-primary/10 outline-none transition-all font-body-md text-body-md placeholder:text-outline-variant" id="password" placeholder="••••••••" required="" type="password"/>
+<button class="absolute right-md top-1/2 -translate-y-1/2 text-on-surface-variant hover:text-primary transition-colors" type="button">
+<span class="material-symbols-outlined text-[20px]">visibility</span>
+</button>
+</div>
+</div>
+<!-- Remember Me -->
+<div class="flex items-center gap-sm">
+<input class="w-4 h-4 rounded border-outline-variant text-primary focus:ring-primary" id="remember" type="checkbox"/>
+<label class="font-body-md text-body-md text-on-surface-variant cursor-pointer" for="remember">
+                        Keep me logged in
+                    </label>
+</div>
+<!-- Primary Action -->
+<button class="w-full h-12 bg-primary hover:bg-primary-container text-white font-title-lg text-title-lg rounded-lg shadow-md hover:shadow-lg transition-all active:scale-[0.98] flex items-center justify-center gap-sm" type="submit">
+<span>Sign In</span>
+<span class="material-symbols-outlined text-[20px]">login</span>
+</button>
+</form>
+<!-- SSO / Alternate Login (Bento-style secondary options) -->
+<div class="mt-xl pt-xl border-t border-outline-variant/30">
+<p class="text-center font-label-md text-label-md text-on-surface-variant mb-md uppercase tracking-widest">
+                    Authorized Access Only
+                </p>
+<div class="grid grid-cols-2 gap-md">
+<button class="flex items-center justify-center h-10 gap-sm bg-white border border-outline-variant rounded-lg hover:bg-surface-container transition-colors">
+<span class="material-symbols-outlined text-[18px]">badge</span>
+<span class="font-label-md text-label-md">ID Card</span>
+</button>
+<button class="flex items-center justify-center h-10 gap-sm bg-white border border-outline-variant rounded-lg hover:bg-surface-container transition-colors">
+<span class="material-symbols-outlined text-[18px]">fingerprint</span>
+<span class="font-label-md text-label-md">Biometric</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Footer Policy -->
+<footer class="mt-xl text-center space-y-xs">
+<p class="font-label-md text-label-md text-on-surface-variant/60">
+                © 2024 Sanjeevani Medical Systems. All Rights Reserved.
+            </p>
+<div class="flex justify-center gap-md">
+<a class="font-label-md text-label-md text-on-surface-variant/80 hover:text-primary" href="#">Privacy Policy</a>
+<span class="text-on-surface-variant/30">•</span>
+<a class="font-label-md text-label-md text-on-surface-variant/80 hover:text-primary" href="#">Terms of Service</a>
+</div>
+</footer>
+</main>
+<!-- Interactive Micro-interactions Script -->
+<script>
+        document.querySelectorAll('input').forEach(input => {
+            input.addEventListener('focus', () => {
+                input.parentElement.parentElement.classList.add('scale-[1.01]');
+                input.parentElement.parentElement.style.transition = 'transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1)';
+            });
+            input.addEventListener('blur', () => {
+                input.parentElement.parentElement.classList.remove('scale-[1.01]');
+            });
+        });
+
+        const togglePassword = document.querySelector('button[type="button"]');
+        const passwordInput = document.getElementById('password');
+        
+        togglePassword.addEventListener('click', () => {
+            const isPassword = passwordInput.type === 'password';
+            passwordInput.type = isPassword ? 'text' : 'password';
+            togglePassword.querySelector('span').textContent = isPassword ? 'visibility_off' : 'visibility';
+        });
+
+        // Form Submission visual feedback
+        const loginForm = document.getElementById('loginForm');
+        loginForm.addEventListener('submit', (e) => {
+            const btn = e.target.querySelector('button[type="submit"]');
+            btn.disabled = true;
+            btn.innerHTML = '<span class="material-symbols-outlined animate-spin">progress_activity</span> Authenticating...';
+            
+            setTimeout(() => {
+                btn.innerHTML = '<span class="material-symbols-outlined">check_circle</span> Welcome Back';
+                btn.classList.replace('bg-primary', 'bg-secondary');
+            }, 1500);
+        });
+    </script>
+</body></html>

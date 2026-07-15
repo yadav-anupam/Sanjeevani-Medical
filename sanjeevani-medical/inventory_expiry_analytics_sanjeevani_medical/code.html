@@ -1,0 +1,529 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Sanjeevani Medical | Inventory Analytics</title>
+<!-- Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&amp;family=Geist:wght@400;500;600;700;900&amp;display=swap" rel="stylesheet"/>
+<!-- Icons -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "error-container": "#ffdad6",
+                    "primary-fixed": "#c9e6ff",
+                    "on-tertiary": "#ffffff",
+                    "on-secondary-container": "#00714d",
+                    "on-background": "#0b1c30",
+                    "surface-container-highest": "#d3e4fe",
+                    "tertiary": "#855300",
+                    "on-primary-container": "#003751",
+                    "surface-container-high": "#dce9ff",
+                    "on-secondary-fixed": "#002113",
+                    "tertiary-fixed-dim": "#ffb95f",
+                    "tertiary-fixed": "#ffddb8",
+                    "primary": "#006591",
+                    "primary-fixed-dim": "#89ceff",
+                    "on-surface": "#0b1c30",
+                    "secondary-fixed": "#6ffbbe",
+                    "surface-container": "#e5eeff",
+                    "on-tertiary-fixed": "#2a1700",
+                    "background": "#f8f9ff",
+                    "surface-variant": "#d3e4fe",
+                    "inverse-on-surface": "#eaf1ff",
+                    "on-primary": "#ffffff",
+                    "inverse-primary": "#89ceff",
+                    "surface-tint": "#006591",
+                    "secondary-fixed-dim": "#4edea3",
+                    "surface-container-low": "#eff4ff",
+                    "error": "#ba1a1a",
+                    "on-tertiary-container": "#4a2c00",
+                    "surface": "#f8f9ff",
+                    "surface-bright": "#f8f9ff",
+                    "on-primary-fixed": "#001e2f",
+                    "on-error-container": "#93000a",
+                    "on-primary-fixed-variant": "#004c6e",
+                    "on-error": "#ffffff",
+                    "surface-container-lowest": "#ffffff",
+                    "inverse-surface": "#213145",
+                    "tertiary-container": "#d88a00",
+                    "surface-dim": "#cbdbf5",
+                    "on-secondary-fixed-variant": "#005236",
+                    "on-tertiary-fixed-variant": "#653e00",
+                    "secondary-container": "#6cf8bb",
+                    "on-surface-variant": "#3e4850",
+                    "outline": "#6e7881",
+                    "secondary": "#006c49",
+                    "outline-variant": "#bec8d2",
+                    "on-secondary": "#ffffff",
+                    "primary-container": "#0ea5e9"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "sm": "8px",
+                    "3xl": "64px",
+                    "lg": "24px",
+                    "xl": "32px",
+                    "2xl": "48px",
+                    "md": "16px",
+                    "max_width": "1440px",
+                    "xs": "4px",
+                    "base": "4px",
+                    "gutter": "24px",
+                    "margin": "32px"
+            },
+            "fontFamily": {
+                    "body-md": ["Inter"],
+                    "headline-lg-mobile": ["Geist"],
+                    "label-md": ["Geist"],
+                    "mono-sm": ["Geist"],
+                    "headline-md": ["Geist"],
+                    "title-lg": ["Inter"],
+                    "display": ["Geist"],
+                    "body-lg": ["Inter"],
+                    "headline-lg": ["Geist"]
+            },
+            "fontSize": {
+                    "body-md": ["14px", {"lineHeight": "20px", "fontWeight": "400"}],
+                    "headline-lg-mobile": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                    "label-md": ["12px", {"lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "500"}],
+                    "mono-sm": ["13px", {"lineHeight": "18px", "fontWeight": "400"}],
+                    "headline-md": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                    "title-lg": ["18px", {"lineHeight": "28px", "fontWeight": "600"}],
+                    "display": ["48px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                    "body-lg": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                    "headline-lg": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "600"}]
+            }
+          }
+        }
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .bento-grid {
+            display: grid;
+            grid-template-columns: repeat(12, 1fr);
+            gap: 24px;
+        }
+        .scrollbar-hide::-webkit-scrollbar {
+            display: none;
+        }
+        .animate-fade-in {
+            animation: fadeIn 0.5s ease-out forwards;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+</head>
+<body class="bg-surface font-body-md text-on-surface selection:bg-primary-container/30">
+<!-- Sidebar Component -->
+<aside class="hidden lg:flex flex-col w-72 h-screen fixed left-0 top-0 z-50 py-lg px-md bg-white border-r border-outline-variant shadow-sm transition-all">
+<div class="flex items-center gap-md px-sm mb-3xl">
+<div class="w-10 h-10 bg-primary-container rounded-lg flex items-center justify-center text-on-primary-container">
+<span class="material-symbols-outlined" data-icon="medical_services">medical_services</span>
+</div>
+<div>
+<h1 class="font-headline-md text-headline-md font-black text-primary leading-none">Sanjeevani</h1>
+<p class="font-label-md text-label-md text-on-surface-variant">Pharmacy Management</p>
+</div>
+</div>
+<button class="mb-xl w-full flex items-center justify-center gap-sm bg-primary text-on-primary font-label-md text-label-md py-md rounded-xl hover:opacity-90 active:scale-95 transition-all shadow-md shadow-primary/20">
+<span class="material-symbols-outlined text-[18px]" data-icon="add">add</span>
+            New Prescription
+        </button>
+<nav class="flex-1 space-y-sm">
+<a class="flex items-center gap-md px-md py-sm rounded-lg text-on-surface-variant hover:bg-surface-container-low transition-all" href="#">
+<span class="material-symbols-outlined" data-icon="dashboard">dashboard</span>
+<span class="font-label-md text-label-md">Dashboard</span>
+</a>
+<a class="flex items-center gap-md px-md py-sm rounded-lg text-on-surface-variant hover:bg-surface-container-low transition-all" href="#">
+<span class="material-symbols-outlined" data-icon="inventory_2">inventory_2</span>
+<span class="font-label-md text-label-md">Inventory</span>
+</a>
+<a class="flex items-center gap-md px-md py-sm rounded-lg text-on-surface-variant hover:bg-surface-container-low transition-all" href="#">
+<span class="material-symbols-outlined" data-icon="point_of_sale">point_of_sale</span>
+<span class="font-label-md text-label-md">POS</span>
+</a>
+<a class="flex items-center gap-md px-md py-sm rounded-lg text-on-surface-variant hover:bg-surface-container-low transition-all" href="#">
+<span class="material-symbols-outlined" data-icon="local_shipping">local_shipping</span>
+<span class="font-label-md text-label-md">Suppliers</span>
+</a>
+<!-- Active State for Reports -->
+<a class="flex items-center gap-md px-md py-sm rounded-lg bg-primary-container/10 text-primary border-l-4 border-primary font-bold" href="#">
+<span class="material-symbols-outlined" data-icon="analytics" style="font-variation-settings: 'FILL' 1;">analytics</span>
+<span class="font-label-md text-label-md">Reports</span>
+</a>
+<a class="flex items-center gap-md px-md py-sm rounded-lg text-on-surface-variant hover:bg-surface-container-low transition-all" href="#">
+<span class="material-symbols-outlined" data-icon="settings">settings</span>
+<span class="font-label-md text-label-md">Settings</span>
+</a>
+</nav>
+<div class="mt-auto border-t border-outline-variant pt-lg space-y-sm">
+<a class="flex items-center gap-md px-md py-sm rounded-lg text-on-surface-variant hover:bg-surface-container-low transition-all" href="#">
+<span class="material-symbols-outlined" data-icon="contact_support">contact_support</span>
+<span class="font-label-md text-label-md">Support</span>
+</a>
+<a class="flex items-center gap-md px-md py-sm rounded-lg text-error hover:bg-error-container/20 transition-all" href="#">
+<span class="material-symbols-outlined" data-icon="logout">logout</span>
+<span class="font-label-md text-label-md">Logout</span>
+</a>
+</div>
+</aside>
+<!-- Main Wrapper -->
+<main class="lg:ml-72 min-h-screen">
+<!-- Header Component -->
+<header class="sticky top-0 z-40 bg-surface h-16 w-full flex justify-between items-center px-margin border-b border-outline-variant">
+<div class="flex items-center gap-xl w-full max-w-2xl">
+<div class="relative w-full">
+<span class="material-symbols-outlined absolute left-md top-1/2 -translate-y-1/2 text-on-surface-variant" data-icon="search">search</span>
+<input class="w-full bg-surface-container-low border-none rounded-full pl-12 pr-md h-10 text-body-md focus:ring-2 focus:ring-primary/20 placeholder:text-on-surface-variant/60" placeholder="Search medicines, reports, or batch IDs..." type="text"/>
+</div>
+</div>
+<div class="flex items-center gap-lg">
+<div class="flex items-center gap-md">
+<button class="p-xs text-on-surface-variant hover:bg-surface-container-high rounded-full transition-colors relative">
+<span class="material-symbols-outlined" data-icon="notifications">notifications</span>
+<span class="absolute top-1 right-1 w-2 h-2 bg-error rounded-full"></span>
+</button>
+<button class="p-xs text-on-surface-variant hover:bg-surface-container-high rounded-full transition-colors">
+<span class="material-symbols-outlined" data-icon="help">help</span>
+</button>
+<button class="p-xs text-on-surface-variant hover:bg-surface-container-high rounded-full transition-colors">
+<span class="material-symbols-outlined" data-icon="settings">settings</span>
+</button>
+</div>
+<div class="h-8 w-[1px] bg-outline-variant"></div>
+<div class="flex items-center gap-sm cursor-pointer group">
+<div class="text-right hidden sm:block">
+<p class="font-label-md text-label-md font-bold text-on-surface">Dr. Sanjeev Gupta</p>
+<p class="font-label-md text-label-md text-on-surface-variant">Pharmacist Admin</p>
+</div>
+<img class="w-10 h-10 rounded-full border-2 border-white shadow-sm object-cover" data-alt="A professional portrait of a senior male pharmacist in a clean white medical coat, wearing glasses and a warm smile, set against a blurred pharmacy interior with neatly organized medicine shelves. High-end editorial lighting, professional healthcare aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAwgT6JUllTRl4DZehLRPoFR5xDgmZQ6yg0Vtfs7jOwvRAuy_c9YeKJC6_GrVerHHRrHgS5oKWTs21IAReh-_IspfIPn3SIqGzcyLam_TUINJNFh3Gorhd1g3HVT_ZfdC8DtNhTuJGRA7A2dFRFL0cdEJ_7UwfpvVOb-1QDTgVDWyy4Evk56NPTcBp4SH-8k-fIqlgLORGLShlAXtXrLabaILdiuhbl6c5NG3zAd5I_8Q0gliYAOgH6vwCon9dA_IjUcBE2a9sFiP0"/>
+</div>
+</div>
+</header>
+<!-- Page Content -->
+<div class="p-margin max-w-max_width mx-auto">
+<!-- Welcome Area -->
+<div class="mb-xl flex flex-col md:flex-row md:items-end justify-between gap-md">
+<div>
+<nav class="flex text-on-surface-variant font-label-md text-label-md gap-xs mb-xs">
+<span>Reports</span>
+<span>/</span>
+<span class="text-primary font-bold">Inventory Analytics</span>
+</nav>
+<h2 class="font-headline-lg text-headline-lg text-on-surface tracking-tight">Expiry &amp; Stock Performance</h2>
+</div>
+<div class="flex gap-sm">
+<button class="flex items-center gap-xs px-md py-sm bg-white border border-outline-variant rounded-lg font-label-md text-label-md text-on-surface hover:bg-surface-container-low transition-all">
+<span class="material-symbols-outlined text-[18px]" data-icon="download">download</span>
+                        Export PDF
+                    </button>
+<button class="flex items-center gap-xs px-md py-sm bg-primary text-on-primary rounded-lg font-label-md text-label-md hover:opacity-90 transition-all">
+<span class="material-symbols-outlined text-[18px]" data-icon="filter_list">filter_list</span>
+                        Date Range: Oct 2023
+                    </button>
+</div>
+</div>
+<!-- Analytics Summary (Bento Style) -->
+<div class="bento-grid mb-xl">
+<div class="col-span-12 md:col-span-4 bg-white p-lg rounded-xl border border-outline-variant shadow-sm animate-fade-in" style="animation-delay: 0.1s">
+<div class="flex items-start justify-between mb-md">
+<div class="p-sm bg-error-container/20 rounded-lg text-error">
+<span class="material-symbols-outlined" data-icon="warning">warning</span>
+</div>
+<span class="text-error font-label-md text-label-md flex items-center">
+<span class="material-symbols-outlined text-[14px]" data-icon="trending_up">trending_up</span> 12%
+                        </span>
+</div>
+<p class="font-label-md text-label-md text-on-surface-variant uppercase tracking-wider mb-xs">Potential Loss (Expiry)</p>
+<h3 class="font-headline-md text-headline-md text-on-surface">₹4,82,500</h3>
+<p class="text-on-surface-variant font-label-md text-label-md mt-md">For stock expiring within 60 days</p>
+</div>
+<div class="col-span-12 md:col-span-4 bg-white p-lg rounded-xl border border-outline-variant shadow-sm animate-fade-in" style="animation-delay: 0.2s">
+<div class="flex items-start justify-between mb-md">
+<div class="p-sm bg-tertiary-container/10 rounded-lg text-tertiary">
+<span class="material-symbols-outlined" data-icon="inventory">inventory</span>
+</div>
+<span class="text-tertiary font-label-md text-label-md flex items-center">
+<span class="material-symbols-outlined text-[14px]" data-icon="remove">remove</span> 0%
+                        </span>
+</div>
+<p class="font-label-md text-label-md text-on-surface-variant uppercase tracking-wider mb-xs">Dead Stock Value</p>
+<h3 class="font-headline-md text-headline-md text-on-surface">₹1,24,000</h3>
+<p class="text-on-surface-variant font-label-md text-label-md mt-md">Items with zero sales in 90 days</p>
+</div>
+<div class="col-span-12 md:col-span-4 bg-white p-lg rounded-xl border border-outline-variant shadow-sm animate-fade-in" style="animation-delay: 0.3s">
+<div class="flex items-start justify-between mb-md">
+<div class="p-sm bg-secondary-container/10 rounded-lg text-secondary">
+<span class="material-symbols-outlined" data-icon="autorenew">autorenew</span>
+</div>
+<span class="text-secondary font-label-md text-label-md flex items-center">
+<span class="material-symbols-outlined text-[14px]" data-icon="trending_up">trending_up</span> 4.2
+                        </span>
+</div>
+<p class="font-label-md text-label-md text-on-surface-variant uppercase tracking-wider mb-xs">Stock Turnover Ratio</p>
+<h3 class="font-headline-md text-headline-md text-on-surface">8.4x</h3>
+<p class="text-on-surface-variant font-label-md text-label-md mt-md">Health check: Optimal range is 6-10x</p>
+</div>
+</div>
+<!-- Visualizations Area -->
+<div class="grid grid-cols-12 gap-lg mb-xl">
+<!-- Expiry Timeline Chart -->
+<div class="col-span-12 lg:col-span-8 bg-white p-lg rounded-xl border border-outline-variant shadow-sm">
+<div class="flex items-center justify-between mb-xl">
+<h4 class="font-title-lg text-title-lg text-on-surface">Expiry Timeline</h4>
+<div class="flex gap-md">
+<div class="flex items-center gap-xs">
+<span class="w-3 h-3 rounded-full bg-error"></span>
+<span class="font-label-md text-label-md text-on-surface-variant">30 Days</span>
+</div>
+<div class="flex items-center gap-xs">
+<span class="w-3 h-3 rounded-full bg-tertiary"></span>
+<span class="font-label-md text-label-md text-on-surface-variant">60 Days</span>
+</div>
+<div class="flex items-center gap-xs">
+<span class="w-3 h-3 rounded-full bg-primary-container"></span>
+<span class="font-label-md text-label-md text-on-surface-variant">90 Days</span>
+</div>
+</div>
+</div>
+<div class="h-64 flex items-end justify-between gap-xl px-md">
+<!-- Chart Bar Group 1 -->
+<div class="flex-1 flex flex-col items-center gap-sm">
+<div class="w-full flex flex-col-reverse gap-xs">
+<div class="w-full h-24 bg-primary-container rounded-sm"></div>
+<div class="w-full h-12 bg-tertiary rounded-sm"></div>
+<div class="w-full h-8 bg-error rounded-t-sm"></div>
+</div>
+<span class="font-label-md text-label-md text-on-surface-variant">Antibiotics</span>
+</div>
+<!-- Bar 2 -->
+<div class="flex-1 flex flex-col items-center gap-sm">
+<div class="w-full flex flex-col-reverse gap-xs">
+<div class="w-full h-16 bg-primary-container rounded-sm"></div>
+<div class="w-full h-20 bg-tertiary rounded-sm"></div>
+<div class="w-full h-4 bg-error rounded-t-sm"></div>
+</div>
+<span class="font-label-md text-label-md text-on-surface-variant">Analgesics</span>
+</div>
+<!-- Bar 3 -->
+<div class="flex-1 flex flex-col items-center gap-sm">
+<div class="w-full flex flex-col-reverse gap-xs">
+<div class="w-full h-32 bg-primary-container rounded-sm"></div>
+<div class="w-full h-8 bg-tertiary rounded-sm"></div>
+<div class="w-full h-16 bg-error rounded-t-sm"></div>
+</div>
+<span class="font-label-md text-label-md text-on-surface-variant">Vitamins</span>
+</div>
+<!-- Bar 4 -->
+<div class="flex-1 flex flex-col items-center gap-sm">
+<div class="w-full flex flex-col-reverse gap-xs">
+<div class="w-full h-28 bg-primary-container rounded-sm"></div>
+<div class="w-full h-10 bg-tertiary rounded-sm"></div>
+<div class="w-full h-6 bg-error rounded-t-sm"></div>
+</div>
+<span class="font-label-md text-label-md text-on-surface-variant">Cardiac</span>
+</div>
+</div>
+</div>
+<!-- Top High Demand Medicines -->
+<div class="col-span-12 lg:col-span-4 bg-white p-lg rounded-xl border border-outline-variant shadow-sm">
+<h4 class="font-title-lg text-title-lg text-on-surface mb-xl">High Demand Medicines</h4>
+<div class="space-y-lg">
+<div class="flex items-center gap-md">
+<div class="w-10 h-10 bg-surface-container flex items-center justify-center rounded-lg text-primary">01</div>
+<div class="flex-1">
+<p class="font-label-md text-label-md font-bold text-on-surface">Amoxicillin 500mg</p>
+<div class="w-full h-1.5 bg-surface-container rounded-full mt-xs">
+<div class="h-full bg-primary rounded-full" style="width: 85%"></div>
+</div>
+</div>
+<span class="font-label-md text-label-md text-on-surface-variant">1.2k units</span>
+</div>
+<div class="flex items-center gap-md">
+<div class="w-10 h-10 bg-surface-container flex items-center justify-center rounded-lg text-primary">02</div>
+<div class="flex-1">
+<p class="font-label-md text-label-md font-bold text-on-surface">Paracetamol 650mg</p>
+<div class="w-full h-1.5 bg-surface-container rounded-full mt-xs">
+<div class="h-full bg-primary rounded-full" style="width: 72%"></div>
+</div>
+</div>
+<span class="font-label-md text-label-md text-on-surface-variant">980 units</span>
+</div>
+<div class="flex items-center gap-md">
+<div class="w-10 h-10 bg-surface-container flex items-center justify-center rounded-lg text-primary">03</div>
+<div class="flex-1">
+<p class="font-label-md text-label-md font-bold text-on-surface">Metformin 500mg</p>
+<div class="w-full h-1.5 bg-surface-container rounded-full mt-xs">
+<div class="h-full bg-primary rounded-full" style="width: 65%"></div>
+</div>
+</div>
+<span class="font-label-md text-label-md text-on-surface-variant">840 units</span>
+</div>
+<div class="flex items-center gap-md">
+<div class="w-10 h-10 bg-surface-container flex items-center justify-center rounded-lg text-primary">04</div>
+<div class="flex-1">
+<p class="font-label-md text-label-md font-bold text-on-surface">Atorvastatin 10mg</p>
+<div class="w-full h-1.5 bg-surface-container rounded-full mt-xs">
+<div class="h-full bg-primary rounded-full" style="width: 58%"></div>
+</div>
+</div>
+<span class="font-label-md text-label-md text-on-surface-variant">720 units</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Table Section -->
+<div class="bg-white rounded-xl border border-outline-variant shadow-sm overflow-hidden">
+<div class="p-lg border-b border-outline-variant flex items-center justify-between">
+<h4 class="font-title-lg text-title-lg text-on-surface">Detailed Expiry Report</h4>
+<div class="flex gap-sm">
+<div class="flex items-center gap-xs px-md py-sm bg-surface-container-low rounded-lg">
+<span class="material-symbols-outlined text-[18px] text-on-surface-variant" data-icon="filter_list">filter_list</span>
+<span class="font-label-md text-label-md text-on-surface">Filter By Category</span>
+</div>
+</div>
+</div>
+<div class="overflow-x-auto">
+<table class="w-full text-left">
+<thead class="bg-surface-container-low">
+<tr>
+<th class="px-lg py-md font-label-md text-label-md text-on-surface-variant uppercase tracking-wider">Medicine Name</th>
+<th class="px-lg py-md font-label-md text-label-md text-on-surface-variant uppercase tracking-wider">Batch ID</th>
+<th class="px-lg py-md font-label-md text-label-md text-on-surface-variant uppercase tracking-wider">Expiry Date</th>
+<th class="px-lg py-md font-label-md text-label-md text-on-surface-variant uppercase tracking-wider">Units</th>
+<th class="px-lg py-md font-label-md text-label-md text-on-surface-variant uppercase tracking-wider">Value</th>
+<th class="px-lg py-md font-label-md text-label-md text-on-surface-variant uppercase tracking-wider">Status</th>
+<th class="px-lg py-md font-label-md text-label-md text-on-surface-variant uppercase tracking-wider text-right">Actions</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-outline-variant">
+<!-- Row 1 -->
+<tr class="hover:bg-surface-container-low/50 transition-colors">
+<td class="px-lg py-md">
+<p class="font-body-md text-on-surface font-semibold">Augmentin 625 Duo</p>
+<p class="text-xs text-on-surface-variant">Antibiotics</p>
+</td>
+<td class="px-lg py-md font-mono-sm text-on-surface-variant">#AUG-98210</td>
+<td class="px-lg py-md">
+<p class="text-on-surface">24 Oct 2023</p>
+<p class="text-[10px] text-error font-bold uppercase">Expiring in 12 days</p>
+</td>
+<td class="px-lg py-md text-on-surface">450</td>
+<td class="px-lg py-md text-on-surface font-semibold">₹67,500</td>
+<td class="px-lg py-md">
+<span class="inline-flex items-center px-sm py-xs rounded-full bg-error-container/20 text-error text-[10px] font-bold uppercase">Critical</span>
+</td>
+<td class="px-lg py-md text-right">
+<div class="flex justify-end gap-xs">
+<button class="px-sm py-xs bg-error text-on-error rounded font-label-md text-[11px] hover:opacity-90">Return</button>
+<button class="px-sm py-xs border border-outline-variant rounded font-label-md text-[11px] hover:bg-surface-container-low">Discount</button>
+</div>
+</td>
+</tr>
+<!-- Row 2 -->
+<tr class="hover:bg-surface-container-low/50 transition-colors">
+<td class="px-lg py-md">
+<p class="font-body-md text-on-surface font-semibold">Glycomet-GP 1</p>
+<p class="text-xs text-on-surface-variant">Diabetes Care</p>
+</td>
+<td class="px-lg py-md font-mono-sm text-on-surface-variant">#GLY-44102</td>
+<td class="px-lg py-md text-on-surface">15 Nov 2023</td>
+<td class="px-lg py-md text-on-surface">1,200</td>
+<td class="px-lg py-md text-on-surface font-semibold">₹34,200</td>
+<td class="px-lg py-md">
+<span class="inline-flex items-center px-sm py-xs rounded-full bg-tertiary-container/10 text-tertiary text-[10px] font-bold uppercase">Nearing</span>
+</td>
+<td class="px-lg py-md text-right">
+<div class="flex justify-end gap-xs">
+<button class="px-sm py-xs bg-primary text-on-primary rounded font-label-md text-[11px] hover:opacity-90">Discount</button>
+<button class="p-xs border border-outline-variant rounded hover:bg-surface-container-low">
+<span class="material-symbols-outlined text-[16px]" data-icon="more_vert">more_vert</span>
+</button>
+</div>
+</td>
+</tr>
+<!-- Row 3 -->
+<tr class="hover:bg-surface-container-low/50 transition-colors">
+<td class="px-lg py-md">
+<p class="font-body-md text-on-surface font-semibold">Shelcal 500mg</p>
+<p class="text-xs text-on-surface-variant">Supplements</p>
+</td>
+<td class="px-lg py-md font-mono-sm text-on-surface-variant">#SHL-00392</td>
+<td class="px-lg py-md text-on-surface">02 Dec 2023</td>
+<td class="px-lg py-md text-on-surface">800</td>
+<td class="px-lg py-md text-on-surface font-semibold">₹12,000</td>
+<td class="px-lg py-md">
+<span class="inline-flex items-center px-sm py-xs rounded-full bg-primary-container/10 text-primary text-[10px] font-bold uppercase">Upcoming</span>
+</td>
+<td class="px-lg py-md text-right">
+<div class="flex justify-end gap-xs">
+<button class="px-sm py-xs border border-outline-variant rounded font-label-md text-[11px] hover:bg-surface-container-low">Review</button>
+</div>
+</td>
+</tr>
+<!-- Row 4 -->
+<tr class="hover:bg-surface-container-low/50 transition-colors">
+<td class="px-lg py-md">
+<p class="font-body-md text-on-surface font-semibold">Pantocid 40mg</p>
+<p class="text-xs text-on-surface-variant">Gastro</p>
+</td>
+<td class="px-lg py-md font-mono-sm text-on-surface-variant">#PAN-11200</td>
+<td class="px-lg py-md text-on-surface">20 Dec 2023</td>
+<td class="px-lg py-md text-on-surface">2,500</td>
+<td class="px-lg py-md text-on-surface font-semibold">₹1,12,500</td>
+<td class="px-lg py-md">
+<span class="inline-flex items-center px-sm py-xs rounded-full bg-primary-container/10 text-primary text-[10px] font-bold uppercase">Upcoming</span>
+</td>
+<td class="px-lg py-md text-right">
+<div class="flex justify-end gap-xs">
+<button class="px-sm py-xs border border-outline-variant rounded font-label-md text-[11px] hover:bg-surface-container-low">Review</button>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="p-lg bg-surface-container-lowest flex items-center justify-between border-t border-outline-variant">
+<p class="font-label-md text-label-md text-on-surface-variant">Showing 1 to 4 of 128 items</p>
+<div class="flex gap-xs">
+<button class="p-sm bg-white border border-outline-variant rounded-lg hover:bg-surface-container-low transition-colors disabled:opacity-50" disabled="">
+<span class="material-symbols-outlined" data-icon="chevron_left">chevron_left</span>
+</button>
+<button class="p-sm bg-white border border-outline-variant rounded-lg hover:bg-surface-container-low transition-colors">
+<span class="material-symbols-outlined" data-icon="chevron_right">chevron_right</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+</main>
+<script>
+        // Simple micro-interaction for rows
+        document.querySelectorAll('tbody tr').forEach(row => {
+            row.addEventListener('mouseenter', () => {
+                row.style.transform = 'translateX(4px)';
+                row.style.transition = 'transform 0.2s ease-out';
+            });
+            row.addEventListener('mouseleave', () => {
+                row.style.transform = 'translateX(0)';
+            });
+        });
+    </script>
+</body></html>

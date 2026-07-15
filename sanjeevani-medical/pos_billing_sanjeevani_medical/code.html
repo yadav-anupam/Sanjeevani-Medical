@@ -1,0 +1,466 @@
+<!DOCTYPE html><html lang="en" class="light"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&amp;family=Geist:wght@400;500;600;700;900&amp;display=swap" rel="stylesheet"><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=block" rel="stylesheet"><script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script><script id="tailwind-config">try{
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "tertiary-fixed-dim": "#ffb95f",
+                        "inverse-surface": "#213145",
+                        "tertiary": "#855300",
+                        "background": "#f8f9ff",
+                        "primary-fixed-dim": "#89ceff",
+                        "surface-tint": "#006591",
+                        "on-surface": "#0b1c30",
+                        "on-surface-variant": "#3e4850",
+                        "secondary-fixed": "#6ffbbe",
+                        "on-tertiary-container": "#4a2c00",
+                        "tertiary-container": "#d88a00",
+                        "on-secondary-fixed-variant": "#005236",
+                        "surface": "#f8f9ff",
+                        "on-error": "#ffffff",
+                        "on-background": "#0b1c30",
+                        "on-tertiary": "#ffffff",
+                        "on-primary-container": "#003751",
+                        "error-container": "#ffdad6",
+                        "surface-container": "#e5eeff",
+                        "surface-bright": "#f8f9ff",
+                        "primary-fixed": "#c9e6ff",
+                        "secondary-container": "#6cf8bb",
+                        "surface-variant": "#d3e4fe",
+                        "on-secondary-fixed": "#002113",
+                        "primary-container": "#0ea5e9",
+                        "outline": "#6e7881",
+                        "inverse-primary": "#89ceff",
+                        "surface-container-high": "#dce9ff",
+                        "secondary-fixed-dim": "#4edea3",
+                        "inverse-on-surface": "#eaf1ff",
+                        "on-error-container": "#93000a",
+                        "error": "#ba1a1a",
+                        "on-primary": "#ffffff",
+                        "tertiary-fixed": "#ffddb8",
+                        "on-secondary-container": "#00714d",
+                        "on-tertiary-fixed": "#2a1700",
+                        "on-secondary": "#ffffff",
+                        "primary": "#006591",
+                        "surface-dim": "#cbdbf5",
+                        "on-primary-fixed-variant": "#004c6e",
+                        "secondary": "#006c49",
+                        "on-tertiary-fixed-variant": "#653e00",
+                        "surface-container-low": "#eff4ff",
+                        "outline-variant": "#bec8d2",
+                        "surface-container-highest": "#d3e4fe",
+                        "on-primary-fixed": "#001e2f",
+                        "surface-container-lowest": "#ffffff"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "xs": "4px",
+                        "md": "16px",
+                        "margin": "32px",
+                        "lg": "24px",
+                        "gutter": "24px",
+                        "xl": "32px",
+                        "3xl": "64px",
+                        "base": "4px",
+                        "2xl": "48px",
+                        "max_width": "1440px",
+                        "sm": "8px"
+                    },
+                    "fontFamily": {
+                        "body-md": ["Inter"],
+                        "label-md": ["Geist"],
+                        "headline-lg": ["Geist"],
+                        "headline-md": ["Geist"],
+                        "display": ["Geist"],
+                        "body-lg": ["Inter"],
+                        "mono-sm": ["Geist"],
+                        "title-lg": ["Inter"]
+                    },
+                    "fontSize": {
+                        "body-md": ["14px", {"lineHeight": "20px", "fontWeight": "400"}],
+                        "label-md": ["12px", {"lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "500"}],
+                        "headline-lg": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+                        "headline-md": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                        "display": ["48px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                        "body-lg": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                        "mono-sm": ["13px", {"lineHeight": "18px", "fontWeight": "400"}],
+                        "title-lg": ["18px", {"lineHeight": "28px", "fontWeight": "600"}]
+                    }
+                },
+            },
+        }
+    }catch(_e){}</script><meta charset="utf-8"></head><body class="bg-background text-on-background font-body-md overflow-hidden">
+<!-- Sidebar Navigation Shell -->
+<aside class="hidden lg:flex flex-col w-72 h-screen fixed left-0 top-0 z-50 py-lg px-md bg-white border-r border-outline-variant shadow-sm">
+<div class="mb-xl px-sm">
+<h1 class="font-headline-md text-headline-md font-black text-primary">Sanjeevani</h1>
+<p class="font-label-md text-label-md text-on-surface-variant">Pharmacy Management</p>
+</div>
+<nav class="flex-1 space-y-xs overflow-y-auto">
+<a href="#" class="flex items-center gap-md px-md py-sm rounded-lg text-on-surface-variant hover:bg-surface-container-low transition-all">
+<span class="material-symbols-outlined" data-icon="dashboard">dashboard</span>
+<span class="font-label-md text-label-md">Dashboard</span>
+</a>
+<a href="#" class="flex items-center gap-md px-md py-sm rounded-lg text-on-surface-variant hover:bg-surface-container-low transition-all">
+<span class="material-symbols-outlined" data-icon="inventory_2">inventory_2</span>
+<span class="font-label-md text-label-md">Inventory</span>
+</a>
+<!-- Active State: POS -->
+<a href="#" class="flex items-center gap-md px-md py-sm rounded-lg bg-primary-container/10 text-primary border-l-4 border-primary transition-all">
+<span class="material-symbols-outlined" data-icon="point_of_sale" style="font-variation-settings: 'FILL' 1;">point_of_sale</span>
+<span class="font-label-md text-label-md font-bold">POS</span>
+</a>
+<a href="#" class="flex items-center gap-md px-md py-sm rounded-lg text-on-surface-variant hover:bg-surface-container-low transition-all">
+<span class="material-symbols-outlined" data-icon="local_shipping">local_shipping</span>
+<span class="font-label-md text-label-md">Suppliers</span>
+</a>
+<a href="#" class="flex items-center gap-md px-md py-sm rounded-lg text-on-surface-variant hover:bg-surface-container-low transition-all">
+<span class="material-symbols-outlined" data-icon="analytics">analytics</span>
+<span class="font-label-md text-label-md">Reports</span>
+</a>
+<a href="#" class="flex items-center gap-md px-md py-sm rounded-lg text-on-surface-variant hover:bg-surface-container-low transition-all">
+<span class="material-symbols-outlined" data-icon="settings">settings</span>
+<span class="font-label-md text-label-md">Settings</span>
+</a>
+</nav>
+<div class="mt-auto space-y-xs pt-lg border-t border-outline-variant">
+<button class="w-full flex items-center justify-center gap-sm bg-primary text-white py-md rounded-xl font-bold transition-all active:scale-95 mb-md">
+<span class="material-symbols-outlined" data-icon="add">add</span>
+                New Prescription
+            </button>
+<a href="#" class="flex items-center gap-md px-md py-sm rounded-lg text-on-surface-variant hover:bg-surface-container-low transition-all">
+<span class="material-symbols-outlined" data-icon="contact_support">contact_support</span>
+<span class="font-label-md text-label-md">Support</span>
+</a>
+<a href="#" class="flex items-center gap-md px-md py-sm rounded-lg text-on-surface-variant hover:bg-surface-container-low transition-all text-error">
+<span class="material-symbols-outlined" data-icon="logout">logout</span>
+<span class="font-label-md text-label-md">Logout</span>
+</a>
+</div>
+</aside>
+<!-- Main Content Canvas -->
+<main class="lg:ml-72 flex flex-col h-screen">
+<!-- TopAppBar -->
+<header class="flex justify-between items-center px-margin h-16 w-full sticky top-0 z-40 bg-surface border-b border-outline-variant">
+<div class="flex items-center gap-xl flex-1">
+<div class="relative w-full max-w-xl group">
+<span class="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-outline group-focus-within:text-primary transition-colors">search</span>
+<input class="w-full h-10 pl-12 pr-4 rounded-full border-outline-variant bg-surface-container-low focus:ring-4 focus:ring-primary-container/20 focus:border-primary border transition-all text-body-md outline-none" placeholder="Search medicines by name or barcode (Alt + S)" type="text">
+<div class="absolute right-4 top-1/2 -translate-y-1/2 text-outline-variant font-mono-sm text-xs border border-outline-variant px-1 rounded">⌘K</div>
+</div>
+</div>
+<div class="flex items-center gap-lg">
+<div class="flex items-center gap-sm px-md py-1.5 bg-surface-container border border-outline-variant rounded-full">
+<div class="w-8 h-8 rounded-full overflow-hidden border border-primary/20">
+<img class="w-full h-full object-cover" data-alt="A professional pharmacist in a clinical setting, wearing a clean white lab coat with a subtle logo on the chest. The portrait is high-quality, with soft natural lighting coming from a nearby window in a modern pharmacy office. The background shows blurred medical shelves, maintaining a clean and trusted medical atmosphere." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDSu6lmWhzBxYvKezH0a1myWSiEvviGeTJEpaQjzhdAFzmsyNS5QJ_K2xRDSOm2fQou-ggWF-lYAuuae765Qj_4zk_UdJrXmtE6XynoZXtFa3jg4uze9Oar793uw_lSI_tKGJEnc_oKHeF0z7sl-sQQNKN2CRnokXhdZMiNNRwM93tIOSRauiC9VkJidPGhwt2Azq7IfPEDgI932F34kU_i5OkVAPCPNgckbN90HDB605x8KQDx9cDLJly13nDHyIwvABmlohrHSGA">
+</div>
+<div class="hidden sm:block">
+<p class="font-label-md text-label-md font-bold leading-tight">Dr. Aditi Sharma</p>
+<p class="text-[10px] uppercase text-outline font-black">Chief Pharmacist</p>
+</div>
+</div>
+<div class="flex items-center gap-sm">
+<button class="p-2 rounded-full hover:bg-surface-container-low transition-colors text-on-surface-variant relative">
+<span class="material-symbols-outlined" data-icon="notifications">notifications</span>
+<span class="absolute top-1.5 right-1.5 w-2 h-2 bg-error rounded-full border-2 border-surface"></span>
+</button>
+<button class="p-2 rounded-full hover:bg-surface-container-low transition-colors text-on-surface-variant">
+<span class="material-symbols-outlined" data-icon="help">help</span>
+</button>
+<button class="p-2 rounded-full hover:bg-surface-container-low transition-colors text-on-surface-variant">
+<span class="material-symbols-outlined" data-icon="settings">settings</span>
+</button>
+</div>
+</div>
+</header>
+<!-- POS Content -->
+<div class="flex-1 flex overflow-hidden">
+<!-- Left Side: Product Selection Grid -->
+<section class="flex-1 overflow-y-auto p-lg space-y-lg">
+<!-- Patient Selector / Lookup -->
+<div class="bg-white border border-outline-variant rounded-xl p-md shadow-sm">
+<div class="flex justify-between items-center mb-md">
+<h2 class="font-title-lg text-title-lg flex items-center gap-sm">
+<span class="material-symbols-outlined text-primary" data-icon="person">person</span>
+                            Patient Information
+                        </h2>
+<button class="text-primary font-label-md text-label-md flex items-center gap-xs hover:underline">
+<span class="material-symbols-outlined text-sm" data-icon="person_add">person_add</span>
+                            Add New Patient
+                        </button>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-md">
+<div class="flex items-center gap-md p-sm bg-surface-container-low border border-primary/20 rounded-lg">
+<div class="w-10 h-10 rounded-full bg-primary-container/20 flex items-center justify-center text-primary font-bold">RK</div>
+<div>
+<p class="font-label-md text-label-md font-bold">Rahul Kapoor</p>
+<p class="text-[11px] text-on-surface-variant">ID: #P-8821 | +91 98765 43210</p>
+</div>
+<button class="ml-auto p-1.5 hover:bg-primary-container/20 rounded-full text-primary">
+<span class="material-symbols-outlined text-lg" data-icon="edit">edit</span>
+</button>
+</div>
+<div class="flex flex-col justify-center px-md border-l border-outline-variant">
+<p class="text-[10px] uppercase text-outline font-bold">Verified Prescription</p>
+<p class="font-body-md text-body-md text-secondary font-semibold flex items-center gap-xs">
+<span class="material-symbols-outlined text-lg" data-icon="check_circle">check_circle</span>
+                                Dr. Mehta (Valid)
+                            </p>
+</div>
+<div class="flex flex-col justify-center px-md border-l border-outline-variant">
+<p class="text-[10px] uppercase text-outline font-bold">Loyalty Points</p>
+<p class="font-body-md text-body-md font-bold text-tertiary">1,240 pts ($12.40)</p>
+</div>
+</div>
+</div>
+<!-- Featured Medicines / Quick Actions -->
+<div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-md">
+<!-- Medicine Card -->
+<div class="bg-white border border-outline-variant rounded-xl p-md hover:border-primary transition-all cursor-pointer group flex flex-col gap-sm">
+<div class="flex justify-between items-start">
+<div class="p-2 bg-surface-container rounded-lg text-primary group-hover:bg-primary-container group-hover:text-white transition-colors">
+<span class="material-symbols-outlined" data-icon="medication">medication</span>
+</div>
+<span class="px-2 py-0.5 bg-secondary-container text-on-secondary-container text-[10px] rounded-full font-bold uppercase">In Stock (120)</span>
+</div>
+<div>
+<p class="font-title-lg text-title-lg">Paracetamol 500mg</p>
+<p class="text-[12px] text-outline">GSk Pharmaceuticals | Strip of 15</p>
+</div>
+<div class="mt-auto flex justify-between items-center">
+<p class="font-headline-md text-headline-md text-primary">$12.50</p>
+<button class="flex items-center gap-sm bg-surface-container-high hover:bg-primary hover:text-white px-md py-sm rounded-lg font-bold transition-all active:scale-95">
+<span class="material-symbols-outlined text-lg" data-icon="add_shopping_cart">add_shopping_cart</span>
+                                Add
+                            </button>
+</div>
+</div>
+<!-- Medicine Card -->
+<div class="bg-white border border-outline-variant rounded-xl p-md hover:border-primary transition-all cursor-pointer group flex flex-col gap-sm">
+<div class="flex justify-between items-start">
+<div class="p-2 bg-surface-container rounded-lg text-primary group-hover:bg-primary-container group-hover:text-white transition-colors">
+<span class="material-symbols-outlined" data-icon="vaccines">vaccines</span>
+</div>
+<span class="px-2 py-0.5 bg-tertiary-container text-on-tertiary-container text-[10px] rounded-full font-bold uppercase">Low Stock (8)</span>
+</div>
+<div>
+<p class="font-title-lg text-title-lg">Amoxicillin Syrup</p>
+<p class="text-[12px] text-outline">Sun Pharma | 60ml Bottle</p>
+</div>
+<div class="mt-auto flex justify-between items-center">
+<p class="font-headline-md text-headline-md text-primary">$45.00</p>
+<button class="flex items-center gap-sm bg-surface-container-high hover:bg-primary hover:text-white px-md py-sm rounded-lg font-bold transition-all active:scale-95">
+<span class="material-symbols-outlined text-lg" data-icon="add_shopping_cart">add_shopping_cart</span>
+                                Add
+                            </button>
+</div>
+</div>
+<!-- Medicine Card -->
+<div class="bg-white border border-outline-variant rounded-xl p-md hover:border-primary transition-all cursor-pointer group flex flex-col gap-sm">
+<div class="flex justify-between items-start">
+<div class="p-2 bg-surface-container rounded-lg text-primary group-hover:bg-primary-container group-hover:text-white transition-colors">
+<span class="material-symbols-outlined" data-icon="pill">pill</span>
+</div>
+<span class="px-2 py-0.5 bg-secondary-container text-on-secondary-container text-[10px] rounded-full font-bold uppercase">In Stock (500)</span>
+</div>
+<div>
+<p class="font-title-lg text-title-lg">Vitamin C Complex</p>
+<p class="text-[12px] text-outline">Cipla Healthcare | Chewable Tabs</p>
+</div>
+<div class="mt-auto flex justify-between items-center">
+<p class="font-headline-md text-headline-md text-primary">$8.25</p>
+<button class="flex items-center gap-sm bg-surface-container-high hover:bg-primary hover:text-white px-md py-sm rounded-lg font-bold transition-all active:scale-95">
+<span class="material-symbols-outlined text-lg" data-icon="add_shopping_cart">add_shopping_cart</span>
+                                Add
+                            </button>
+</div>
+</div>
+</div>
+<!-- Active Prescriptions List -->
+<div class="bg-white border border-outline-variant rounded-xl overflow-hidden">
+<div class="px-md py-sm bg-surface-container border-b border-outline-variant flex justify-between items-center">
+<h3 class="font-label-md text-label-md font-bold uppercase">Linked Prescription Items</h3>
+<span class="text-xs text-outline italic">Matches from Dr. Mehta's e-script</span>
+</div>
+<table class="w-full text-left">
+<thead class="bg-surface-container-low border-b border-outline-variant">
+<tr>
+<th class="px-md py-sm font-label-md text-label-md text-outline">ITEM NAME</th>
+<th class="px-md py-sm font-label-md text-label-md text-outline">DOSAGE</th>
+<th class="px-md py-sm font-label-md text-label-md text-outline">PRICE</th>
+<th class="px-md py-sm font-label-md text-label-md text-outline text-right">ACTION</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-outline-variant">
+<tr class="hover:bg-surface-container-low transition-colors">
+<td class="px-md py-md font-body-md">Azithromycin 250mg</td>
+<td class="px-md py-md font-body-md text-outline">1-0-1 (5 Days)</td>
+<td class="px-md py-md font-body-md font-bold">$18.90</td>
+<td class="px-md py-md text-right">
+<button class="text-primary font-bold hover:bg-primary-container/10 px-md py-1 rounded-lg transition-colors">Add to Cart</button>
+</td>
+</tr>
+<tr class="hover:bg-surface-container-low transition-colors">
+<td class="px-md py-md font-body-md">Cough Relief Syrup (100ml)</td>
+<td class="px-md py-md font-body-md text-outline">2 tsp (Night)</td>
+<td class="px-md py-md font-body-md font-bold">$12.00</td>
+<td class="px-md py-md text-right">
+<button class="text-primary font-bold hover:bg-primary-container/10 px-md py-1 rounded-lg transition-colors">Add to Cart</button>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<!-- Right Side: Cart Summary Panel -->
+<section class="w-[400px] bg-white border-l border-outline-variant flex flex-col shadow-2xl z-10">
+<div class="p-lg border-b border-outline-variant">
+<div class="flex justify-between items-center">
+<h2 class="font-headline-md text-headline-md flex items-center gap-sm">
+<span class="material-symbols-outlined text-primary" data-icon="shopping_cart">shopping_cart</span>
+                            Current Cart
+                        </h2>
+<button class="text-error font-bold text-[12px] flex items-center gap-xs uppercase">
+<span class="material-symbols-outlined text-sm" data-icon="delete_sweep">delete_sweep</span>
+                            Clear
+                        </button>
+</div>
+</div>
+<!-- Itemized Cart List -->
+<div class="flex-1 overflow-y-auto p-lg space-y-md">
+<!-- Cart Item 1 -->
+<div class="flex gap-md group">
+<div class="w-12 h-12 bg-surface-container rounded-lg flex items-center justify-center text-primary flex-shrink-0">
+<span class="material-symbols-outlined" data-icon="medication">medication</span>
+</div>
+<div class="flex-1">
+<div class="flex justify-between">
+<h4 class="font-body-md font-bold">Paracetamol 500mg</h4>
+<p class="font-body-md font-bold">$12.50</p>
+</div>
+<p class="text-xs text-outline">GSk | Strip of 15</p>
+<div class="flex justify-between items-center mt-sm">
+<div class="flex items-center gap-md bg-surface-container-low border border-outline-variant rounded-lg px-2 py-0.5">
+<button class="hover:text-primary"><span class="material-symbols-outlined text-lg" data-icon="remove">remove</span></button>
+<span class="font-bold text-sm">1</span>
+<button class="hover:text-primary"><span class="material-symbols-outlined text-lg" data-icon="add">add</span></button>
+</div>
+<button class="text-outline-variant hover:text-error opacity-0 group-hover:opacity-100 transition-opacity">
+<span class="material-symbols-outlined text-lg" data-icon="delete">delete</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Cart Item 2 -->
+<div class="flex gap-md group">
+<div class="w-12 h-12 bg-surface-container rounded-lg flex items-center justify-center text-primary flex-shrink-0">
+<span class="material-symbols-outlined" data-icon="vaccines">vaccines</span>
+</div>
+<div class="flex-1">
+<div class="flex justify-between">
+<h4 class="font-body-md font-bold">Azithromycin 250mg</h4>
+<p class="font-body-md font-bold">$18.90</p>
+</div>
+<p class="text-xs text-outline">Mylan | Strip of 6</p>
+<div class="flex justify-between items-center mt-sm">
+<div class="flex items-center gap-md bg-surface-container-low border border-outline-variant rounded-lg px-2 py-0.5">
+<button class="hover:text-primary"><span class="material-symbols-outlined text-lg" data-icon="remove">remove</span></button>
+<span class="font-bold text-sm">1</span>
+<button class="hover:text-primary"><span class="material-symbols-outlined text-lg" data-icon="add">add</span></button>
+</div>
+<button class="text-outline-variant hover:text-error opacity-0 group-hover:opacity-100 transition-opacity">
+<span class="material-symbols-outlined text-lg" data-icon="delete">delete</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+<!-- Totals Section -->
+<div class="p-lg bg-surface-container-lowest border-t border-outline-variant space-y-md">
+<div class="space-y-sm">
+<div class="flex justify-between text-body-md">
+<span class="text-on-surface-variant">Subtotal</span>
+<span class="">$31.40</span>
+</div>
+<div class="flex justify-between text-body-md">
+<span class="text-on-surface-variant">Tax (GST 5%)</span>
+<span class="">$1.57</span>
+</div>
+<div class="flex justify-between text-body-md">
+<span class="text-on-surface-variant">Discount</span>
+<span class="text-secondary">-$2.00</span>
+</div>
+<div class="pt-sm border-t border-outline-variant flex justify-between font-headline-md text-headline-md text-primary">
+<span class="">Total</span>
+<span class="">$30.97</span>
+</div>
+</div>
+<div class="space-y-md mb-md">
+    <div class="flex items-center justify-between">
+        <h3 class="font-label-md text-label-md font-bold uppercase text-on-surface-variant">Digital Receipt</h3>
+        <span class="text-[10px] text-outline italic">Auto-send on completion</span>
+    </div>
+    <div class="grid grid-cols-2 gap-sm">
+        <button class="flex items-center justify-center gap-sm p-sm rounded-lg border border-primary bg-primary-container/10 text-primary transition-all">
+            <span class="material-symbols-outlined text-lg">chat</span>
+            <span class="font-label-md text-label-md">WhatsApp</span>
+        </button>
+        <button class="flex items-center justify-center gap-sm p-sm rounded-lg border border-outline-variant text-on-surface-variant hover:bg-surface-container-low transition-all">
+            <span class="material-symbols-outlined text-lg">mail</span>
+            <span class="font-label-md text-label-md">Email</span>
+        </button>
+    </div>
+    <div class="relative">
+        <span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-outline text-sm">contact_phone</span>
+        <input type="text" class="w-full h-10 pl-10 pr-4 rounded-lg border border-outline-variant bg-surface-container-low text-body-md outline-none focus:border-primary focus:ring-4 focus:ring-primary-container/20 transition-all" placeholder="Customer Phone / Email" value="+91 98765 43210">
+    </div>
+</div><div class="grid grid-cols-2 gap-md pt-md">
+<button class="flex items-center justify-center gap-sm border border-primary text-primary hover:bg-primary-container/10 py-md rounded-xl font-bold transition-all active:scale-95">
+<span class="material-symbols-outlined" data-icon="print">print</span>
+                            Invoice
+                        </button>
+<button class="flex items-center justify-center gap-sm bg-primary text-white hover:bg-primary-fixed-dim hover:text-on-primary-fixed shadow-lg shadow-primary/20 py-md rounded-xl font-bold transition-all active:scale-95">
+<span class="material-symbols-outlined" data-icon="task_alt">task_alt</span>
+                            Complete
+                        </button>
+</div>
+<div class="flex items-center gap-sm p-sm bg-tertiary-fixed text-on-tertiary-fixed rounded-lg text-xs font-bold uppercase tracking-wider justify-center">
+<span class="material-symbols-outlined text-sm" data-icon="credit_score">credit_score</span>
+                        Split payment enabled
+                    </div>
+</div>
+</section>
+</div>
+</main>
+<!-- Floating Action Button for Emergency / Quick Stock Check -->
+<div class="fixed bottom-lg right-[432px] z-30">
+<button class="w-14 h-14 bg-error text-white rounded-full flex items-center justify-center shadow-xl hover:scale-110 active:scale-90 transition-all group">
+<span class="material-symbols-outlined" data-icon="emergency">emergency</span>
+<span class="absolute right-16 bg-inverse-surface text-inverse-on-surface px-md py-sm rounded-lg opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap font-label-md pointer-events-none">SOS / Emergency Mode</span>
+</button>
+</div>
+<script class="">
+        // Simple Interaction logic for keyboard shortcuts
+        document.addEventListener('keydown', (e) => {
+            if ((e.metaKey || e.ctrlKey) && e.key === 'k') {
+                e.preventDefault();
+                document.querySelector('input').focus();
+            }
+        });
+
+        // Toggle active class on medicine cards for visual feedback
+        const cards = document.querySelectorAll('.group.cursor-pointer');
+        cards.forEach(card => {
+            card.addEventListener('click', () => {
+                card.classList.add('ring-2', 'ring-primary');
+                setTimeout(() => card.classList.remove('ring-2', 'ring-primary'), 500);
+            });
+        });
+    </script>
+
+</body></html>
